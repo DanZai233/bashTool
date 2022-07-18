@@ -1,13 +1,12 @@
 #!/bin/bash
 
-#½«ip·ÅÈëÖ¸¶¨Î»ÖÃ
+#å°†ipæ”¾å…¥æŒ‡å®šä½ç½®
 
 cat>/tmp/ip.conf<<EOF  
-172.20.56.168
-172.20.49.183
+
 EOF
 
-#½«change.sh·ÅÈëÖ¸¶¨Ä¿Â¼ÏÂ
+#å°†change.shæ”¾å…¥æŒ‡å®šç›®å½•ä¸‹
 cat>/opt/change.sh<<EOF  
 cp -r /etc/yum.repos.d /etc/yum.repos.d.bak
 rm -rf /etc/yum.repos.d/*
@@ -62,12 +61,12 @@ df -hT
 hostname -I
 EOF
 
-#ÔÚputµÄÍ¬Ê±Ö´ÐÐ½Å±¾
+#åœ¨putçš„åŒæ—¶æ‰§è¡Œè„šæœ¬
 i=0
 cat /tmp/ip.conf|while read ipaddr; do
 let i+=1
 ip=$ipaddr
-passwd=Zzcsdn@Aliyun2021#
+passwd=
 port=22
 local_dir=/opt/change.sh
 goal_dir=/opt
@@ -90,4 +89,4 @@ set timeout 500
 expect eof
 EOF
 done
-#¼ì²é
+#æ£€æŸ¥
