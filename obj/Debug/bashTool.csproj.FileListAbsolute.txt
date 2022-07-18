@@ -1,0 +1,14 @@
+C:\Users\chz20\Documents\cs-study\bashTool\bin\Debug\bashTool.exe.config
+C:\Users\chz20\Documents\cs-study\bashTool\bin\Debug\bashTool.exe
+C:\Users\chz20\Documents\cs-study\bashTool\bin\Debug\bashTool.pdb
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Debug\bashTool.csproj.AssemblyReference.cache
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Debug\bashTool.csproj.SuggestedBindingRedirects.cache
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Debug\bashTool.Form1.resources
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Debug\bashTool.Properties.Resources.resources
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Debug\bashTool.csproj.GenerateResource.cache
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Debug\bashTool.csproj.CoreCompileInputs.cache
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Debug\bashTool.exe
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Debug\bashTool.pdb
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Debug\bashTool.setIP.resources
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Debug\bashTool.setPasswd.resources
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Debug\bashTool.setPort.resources

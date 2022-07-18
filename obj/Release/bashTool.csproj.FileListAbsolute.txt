@@ -1,0 +1,14 @@
+C:\Users\chz20\Documents\cs-study\bashTool\bin\Release\bashTool.exe.config
+C:\Users\chz20\Documents\cs-study\bashTool\bin\Release\bashTool.exe
+C:\Users\chz20\Documents\cs-study\bashTool\bin\Release\bashTool.pdb
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Release\bashTool.csproj.AssemblyReference.cache
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Release\bashTool.csproj.SuggestedBindingRedirects.cache
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Release\bashTool.Form1.resources
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Release\bashTool.Properties.Resources.resources
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Release\bashTool.setIP.resources
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Release\bashTool.setPasswd.resources
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Release\bashTool.setPort.resources
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Release\bashTool.csproj.GenerateResource.cache
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Release\bashTool.csproj.CoreCompileInputs.cache
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Release\bashTool.exe
+C:\Users\chz20\Documents\cs-study\bashTool\obj\Release\bashTool.pdb

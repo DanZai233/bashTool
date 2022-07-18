@@ -1,0 +1,93 @@
+#!/bin/bash
+
+#将ip放入指定位置
+
+cat>/tmp/ip.conf<<EOF  
+172.20.56.168
+172.20.49.183
+EOF
+
+#将change.sh放入指定目录下
+cat>/opt/change.sh<<EOF  
+cp -r /etc/yum.repos.d /etc/yum.repos.d.bak
+rm -rf /etc/yum.repos.d/*
+echo "
+[base]
+name=base
+baseurl=http://172.16.128.94/base
+enabled=1
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+
+
+[epel]
+name=epel
+baseurl=http://172.16.128.94/epel
+enabled=1
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+
+
+[updates]
+name=updates
+baseurl=http://172.16.128.94/updates
+enabled=1
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+
+[extras]
+name=extras
+baseurl=http://172.16.128.94/extras
+enabled=1
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+" > /etc/yum.repos.d/abc.repo
+yum clean all
+yum makecache
+yum repolist
+
+
+yum -y install lvm* telnet lsof expect
+pvcreate /dev/vdb
+vgcreate datavg /dev/vdb
+lvcreate -l 100%VG -n lv-data01 datavg
+mkfs.ext4 /dev/datavg/lv-data01
+mkdir -p /data
+mount /dev/datavg/lv-data01 /data
+
+echo "/dev/mapper/datavg-lv--data01             /data                   ext4    defaults        0 0" >> /etc/fstab
+cat /etc/fstab
+df -hT
+
+hostname -I
+EOF
+
+#在put的同时执行脚本
+i=0
+cat /tmp/ip.conf|while read ipaddr; do
+let i+=1
+ip=$ipaddr
+passwd=Zzcsdn@Aliyun2021#
+port=22
+local_dir=/opt/change.sh
+goal_dir=/opt
+#echo "executing No$i job"
+/usr/bin/expect <<-EOF
+set time 300
+spawn scp  -r -p$port $local_dir root@$ip:$goal_dir
+expect {
+"*yes/no" { send "yes\r"; exp_continue }
+"*password:" { send "$passwd\r" }
+}
+set timeout 500
+spawn ssh root@$ip "sh /opt/change.sh"
+expect {
+"*yes/no" { send "yes\r"; exp_continue }
+"*password:" { send "$passwd\r" }
+}
+
+set timeout 500
+expect eof
+EOF
+done
+#检查
